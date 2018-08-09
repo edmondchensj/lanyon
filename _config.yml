@@ -10,13 +10,7 @@ permalink:           pretty
 title:               Edmond Chen
 tagline:             'blog for occasional projects'
 description:         'Starting a blog for occasional projects.'
-#url:                 'edmondchensj.github.io'
-=======
-title:               Pineapple
-tagline:             'a Project blog'
-description:         'Starting a blog to post interesting projects.'
-url:                 http://edmondchensj.github.io
->>>>>>> cfe8078d3e73384f369fa4d171ea5cb4891a3297
+url:                 'edmondchensj.github.io'
 baseurl:             ''
 paginate:            5
 paginate_path:       "page:num"
@@ -24,11 +18,7 @@ paginate_path:       "page:num"
 # About/contact
 author:
   name:              Edmond Chen
-<<<<<<< HEAD
   url:               ""
-=======
-  url:               -
->>>>>>> cfe8078d3e73384f369fa4d171ea5cb4891a3297
   email:             edmondchensj@gmail.com
 
 # Custom vars
