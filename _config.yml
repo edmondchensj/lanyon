@@ -22,8 +22,3 @@ author:
 
 # Custom vars
 version:             1.0.0
-
-# Includes an icon in the footer for each username you enter
-social-network-links:
-  email: "someone@example.com"
-  github: edmondchensj
