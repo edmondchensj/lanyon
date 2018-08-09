@@ -356,6 +356,15 @@ a.sidebar-nav-item:focus {
   color: inherit;
 }
 
+/* Added footer */
+.footer {
+  padding-top: 1.5rem;
+  padding-bottom: 2rem;
+  border-top: 1px solid #eee;
+  text-align: center;
+  font-size: 1rem;
+  color: #505050;
+}
 
 /*
  * Pagination
