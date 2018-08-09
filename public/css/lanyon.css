@@ -41,11 +41,12 @@ body {
 }
 
 html {
-  font-family: "PT Sans", Helvetica, Arial, sans-serif;
+  font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
+  font-size: 1rem;;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "PT Serif", Georgia, "Times New Roman", serif;
+  font-family: "Open Sans", Georgia, "Times New Roman", serif;
   font-weight: 400;
   color: #313131;
   letter-spacing: -.025rem;
@@ -77,12 +78,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 @media (min-width: 38em) {
   .container {
-    max-width: 32rem;
+    max-width: 33rem;
   }
 }
 @media (min-width: 56em) {
   .container {
-    max-width: 42rem;
+    max-width: 43rem;
   }
 }
 
@@ -148,7 +149,7 @@ h1, h2, h3, h4, h5, h6 {
   width: 14rem;
   visibility: hidden;
   overflow-y: auto;
-  font-family: "PT Sans", Helvetica, Arial, sans-serif;
+  font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
   font-size: .875rem; /* 15px */
   color: rgba(255,255,255,.6);
   background-color: #202020;
@@ -366,6 +367,21 @@ a.sidebar-nav-item:focus {
   color: #505050;
 }
 
+/* Added image container */
+.img-container {
+  margin-left:-4rem;
+  max-width: 33rem;
+}
+@media (min-width: 38em) {
+  .img-container {
+    max-width: 40rem;
+  }
+}
+@media (min-width: 56em) {
+  .img-container {
+    max-width: 53rem;
+  }
+}
 /*
  * Pagination
  *
@@ -377,7 +393,7 @@ a.sidebar-nav-item:focus {
   overflow: hidden; /* clearfix */
   margin-left: -1rem;
   margin-right: -1rem;
-  font-family: "PT Sans", Helvetica, Arial, sans-serif;
+  font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
   color: #ccc;
   text-align: center;
 }
