@@ -6,11 +6,10 @@ permalink:           pretty
 #relative_permalinks: true
 
 # Setup
-<<<<<<< HEAD
 title:               Edmond Chen
 tagline:             'blog for occasional projects'
 description:         'Starting a blog for occasional projects.'
-url:                 'edmondchensj.github.io'
+url:                 'https://edmondchensj.github.io/'
 baseurl:             ''
 paginate:            5
 paginate_path:       "page:num"
