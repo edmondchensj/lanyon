@@ -7,8 +7,8 @@ permalink:           pretty
 
 # Setup
 title:               Edmond Chen
-tagline:             'blog for occasional projects'
-description:         'Starting a blog for occasional projects.'
+tagline:             'a blog for occasional projects'
+#description:         'Starting a blog for occasional projects.'
 url:                 'https://edmondchensj.github.io/'
 baseurl:             ''
 paginate:            5
@@ -22,3 +22,19 @@ author:
 
 # Custom vars
 version:             1.0.0
+
+# Includes an icon in the footer for each username you enter
+footer-links:
+  dribbble:
+  email:             edmondchensj@gmail.com
+  facebook:
+  flickr:
+  github:            https://github.com/edmondchensj
+  instagram:
+  linkedin: 
+  pinterest:
+  rss: 
+  twitter: 
+  stackoverflow: # your stackoverflow profile, e.g. "users/50476/bart-kiers"
+  youtube: # channel/<your_long_string> or user/<user-name>
+  googleplus: # anything in your profile username that comes after plus.google.com/
