@@ -5,21 +5,41 @@ published: true
 ---
 
 ## Summary
-* I applied unsupervised machine learning to examine 12,951 review paper abstracts in breast cancer research. 
-* I started with the question: "How can I quickly and comprehensively understand the landscape of cancer research?"
+* I applied unsupervised machine learning to examine 12,951 review paper abstracts in breast cancer research.
+* I wanted to address the question: "How can I quickly and comprehensively understand the landscape of cancer research?"
 * Chemotherapy is most overwhelmingly mentioned in breast cancer research. 
 * An emerging topic is Triple Negative Breast Cancer (TNBC). 
 * A common theme seems to be chemotherapy resistance. 
 <p/>
 <br/>
 
-## Introduction
-Breast cancer is one of the major causes of death in the world. Because there are hundreds of thousands of research papers in the field, it is not easy to understand the state of research by looking through papers manually. 
+## Motivation
+I started this project with the question: 
+<div class="message">"How can I quickly and comprehensively understand the landscape of cancer research?"
+</div>
 
+Online databases such as PubMed and Google Scholar now provide us with unprecedented access to millions of research papers, if not in full, then at least their abstracts. 
+
+But to search and use these papers, one must first know relevant keywords to search for. This presents a **"cold-start" problem** for 
+(a) people who do not have significant prior knowledge in the field and
+(b) people who may be deeply involved in a particular subfield and wish to understand what research may lie beyond their horizon. 
+
+A simple approach would be to search "cancer" and start reading the *most cited* papers. This not only is labor-intensive, but the *most cited* papers also do not necessarily represent a diverse range of research areas. 
+
+Another approach would be to look at categories described by cancer institutes such as [cancer.gov](https://www.cancer.gov/research/areas). While these institutes provide qualitative descriptions, it does not provide the most prominent medical terms, nor enable us to detect distributions and trends in the field. 
+
+## A Solution
 [Topic Modeling](https://en.wikipedia.org/wiki/Topic_model) is an [unsupervised machine learning](https://en.wikipedia.org/wiki/Unsupervised_learning) algorithm that extracts topics from a set of documents. The specific topic modeling algorithm I applied was [Latent Dirichlet Allocation](https://en.wikipedia.org/wiki/Latent_Dirichlet_allocation) (LDA), which looks for words that frequently appear together. I coupled it with [Term Frequency-Inverse Document Frequency](https://en.wikipedia.org/wiki/Tf%E2%80%93idf) (TFIDF), which prioritizes rare words over common words.
 
-While [cancer.gov](https://www.cancer.gov/research/areas) provides a broad overview of cancer research areas, topic modeling allows us to detect distributions and trends, as well as specific medical terms used in the field. 
+While this would not provide a deep understanding of any particular subfield of research, it does provide the following:
+* A comprehensive set of prominent medical terms used across different subfields 
+* An ability to measure which subfields might be more popular
+* An ability to measure which subfields might be trending
 
+Most directly, it presents a solution to the "cold-start" problem as mentioned above. 
+
+
+<br/>
 ## Data
 Using the [Biopython API](https://biopython.org/DIST/docs/api/Bio.Entrez-module.html). I retrieved 12,951 review paper abstracts published between 1997 to 2017 from the [PubMed database](https://www.ncbi.nlm.nih.gov/pubmed). I narrowed down papers using the following search criteria:
 * contains keywords "breast cancer"
@@ -30,7 +50,7 @@ Using the [Biopython API](https://biopython.org/DIST/docs/api/Bio.Entrez-module.
 Reviews are secondary sources that summarize the "current state of understanding" in a field. I further reduced the amount of text that I had to process by using abstracts. 
 
 ## Method
-The entire process involved the following steps. The code can be found in this github [repository](#). 
+The entire process involved the following steps. 
 1. Data Retrieval
 
 2. Preprocessing
@@ -56,7 +76,7 @@ The results shows an ["elbow"](https://en.wikipedia.org/wiki/Elbow_method_(clust
 After deciding on the number of topics, I visualized the topics in a grid of wordclouds below. The wordclouds show the top 20 words for that topic, sized by its importance. 
 ![wordcloud](/assets/images/breast_cancer/wordcloud_grid.png)
 
-This could be difficult to read in first glance. I looked up a few key terms in each topic and posted links to some articles I found. 
+This could be difficult to read in first glance. I looked up a few key terms in each topic and provided links to some articles I found. 
 
 <table>
   <thead>
@@ -141,8 +161,12 @@ Topic 2, characterized by **nutrition**, had the most negative growth, at -48%.
 
 <br/>
 ## Conclusion
-Conventional treatment methods i.e. chemotherapy and hormonal therapy are mentioned far more frequently than any other topics. Triple Negative Breast Cancer is a topic that has emerged in the last two decades. 
+The purpose of this project was to develop a quick and comprehensive method for understanding the diversity and landscape of breast cancer research. This was due to the "cold-start" problem for people without prior knowledge of the field or of other subfields. 
+
+On top of generating a comprehensive set of key medical terms, this method also enables us to observe distributions and trends in a research field. 
+
+In breast cancer research, I found that conventional treatment methods i.e. chemotherapy and hormonal therapy are mentioned far more frequently than any other topics. Triple Negative Breast Cancer is a topic that has emerged in the last two decades. 
 
 Interestingly, a common theme among the terms and articles seems to be **emerging resistance** to chemotherapy drugs. Chemotherapy resistance is implicated in terms such as [autophagy](http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0006251), [BCRP expression](https://www.nature.com/articles/1206938), and combination chemotherapy. A similar problem is occurring with [antibiotic resistance](https://www.cdc.gov/drugresistance/index.html). In fact, combination chemotherapy was [inspired](https://en.wikipedia.org/wiki/History_of_cancer_chemotherapy#Combination_chemotherapy) by the success of antibiotics in the mid 1900s, which had used a combination approach to overcome drug resistance and treat tuberculosis. 
 
-It should be noted that there would be many other topics ***not*** covered in this topic model. Results would vary significantly based on papers selected, quality of preprocessing, and modeling algorithms. 
+It should be noted that this method simply looked for occurrences of words. Thus this method would not only be inadequate in answering most questions in the field, but is also flawed in its ability to generate topics.One major factor is the quality and amount of prior preprocessing. I found that the removal of additional, common biomedical terms from the data skewed the results significantly.
