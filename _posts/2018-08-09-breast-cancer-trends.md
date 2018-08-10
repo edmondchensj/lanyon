@@ -39,8 +39,6 @@ While this would not provide a deep understanding of any particular subfield of 
 
 Most directly, it presents a solution to the "cold-start" problem as mentioned above. 
 
-
-<br/>
 ## Data
 Using the [Biopython API](https://biopython.org/DIST/docs/api/Bio.Entrez-module.html). I retrieved 12,951 review paper abstracts published between 1997 to 2017 from the [PubMed database](https://www.ncbi.nlm.nih.gov/pubmed). I narrowed down papers using the following search criteria:
 * contains keywords "breast cancer"
