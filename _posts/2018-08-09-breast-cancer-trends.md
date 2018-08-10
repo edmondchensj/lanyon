@@ -56,7 +56,9 @@ The entire process involved the following steps.
 
 2. Preprocessing
     * I applied Natural Language Processing (NLP) to preprocess the data. 
-    * On top of the standard NLP procedures, I removed additional [stop words](https://en.wikipedia.org/wiki/Stop_words) that are specific to the biomedical field. Examples include "breast", "female", "treatment" and "receptor". 
+    * Using the NLP toolkit [*spaCy*](https://spacy.io/), I kept only **proper nouns** and **nouns**, removing all other forms of words such as verbs and adjectives. This not only removed superfluous words, it might remove positive and negative terms associated with a particular topic, therefore preventing any "internal splits" in a topic. 
+
+    * I also removed additional [stop words](https://en.wikipedia.org/wiki/Stop_words) that are specific to the biomedical field. Examples include "breast", "female", "treatment" and "receptor". 
     * Often, these words describe broad categories and are not specific enough to be helpful. Choosing stop words took about 10 manual iterations. 
     * The total number of additional stop words was 148. 
 
