@@ -2,6 +2,7 @@
 layout: post
 title: What are trends in breast cancer research over the past 20 years?
 published: true
+permalink: 
 ---
 
 ## Summary
@@ -167,6 +168,8 @@ Topic Modeling provides a comprehensive set of medical terms, and allows us to o
 
 In breast cancer research, I found that conventional treatment methods i.e. chemotherapy and hormonal therapy are mentioned far more frequently than any other topics. Triple Negative Breast Cancer is a topic that has emerged in the last two decades. 
 
-Interestingly, a common theme among the terms and articles seems to be **emerging resistance** to chemotherapy drugs. Chemotherapy resistance is implicated in terms such as [autophagy](http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0006251), [BCRP expression](https://www.nature.com/articles/1206938), and combination chemotherapy. A similar problem is occurring with [antibiotic resistance](https://www.cdc.gov/drugresistance/index.html). In fact, combination chemotherapy was [inspired](https://en.wikipedia.org/wiki/History_of_cancer_chemotherapy#Combination_chemotherapy) by the success of antibiotics in the mid 1900s, which had used a combination approach to overcome drug resistance and treat tuberculosis. 
+Interestingly, a common theme among the terms and articles seems to be **emerging resistance** to chemotherapy drugs. Chemotherapy resistance is implicated in terms such as [autophagy](http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0006251), [BCRP expression](https://www.nature.com/articles/1206938), and combination chemotherapy. 
+
+A similar problem is occurring with [antibiotic resistance](https://www.cdc.gov/drugresistance/index.html). In fact, combination chemotherapy was [inspired](https://en.wikipedia.org/wiki/History_of_cancer_chemotherapy#Combination_chemotherapy) by the success of antibiotics in the mid 1900s, which had used a combination approach to overcome drug resistance and treat tuberculosis. 
 
 It should be noted that this method simply looked for occurrences of words. Thus this method would not only be inadequate in answering most questions in the field, but is also flawed in its ability to generate topics. One major factor is the quality and amount of prior preprocessing. I found that the removal of additional biomedical terms from the data skewed the results significantly.
