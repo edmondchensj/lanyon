@@ -166,7 +166,7 @@ Topic 2, characterized by **nutrition**, had the most negative growth, at -48%.
 ## Conclusion
 The purpose of this project was to develop a method for quickly understanding the diversity and landscape of breast cancer research. This was due to the "cold-start" problem: people without prior knowledge of the field or other subfields do not know which medical terms to begin researching. 
 
-Topic Modeling provides a comprehensive set of medical terms, and allows us to observe distributions and trends among the subfields. 
+I was new to the field of cancer research, and topic modeling provided a comprehensive set of medical terms and enabled me to observe the distribution and trends among possible subfields. 
 
 In breast cancer research, I found that conventional treatment methods i.e. chemotherapy and hormonal therapy are mentioned far more frequently than any other topics. Triple Negative Breast Cancer is a topic that has emerged in the last two decades. 
 
