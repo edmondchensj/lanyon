@@ -27,7 +27,7 @@ But to search and use these papers, one must first know relevant keywords to sea
 
 A simple approach would be to search "cancer" and start reading the *most cited* papers. This not only is labor-intensive, but the *most cited* papers also do not necessarily represent a diverse range of research areas. 
 
-Another approach would be to look at categories described by cancer institutes such as [cancer.gov](https://www.cancer.gov/research/areas). While these institutes provide qualitative descriptions, it does not provide the most prominent medical terms, nor enable us to detect distributions and trends in the field. 
+Another approach would be to look at categories described by cancer institutes such as [cancer.gov](https://www.cancer.gov/research/areas). While these institutes provide qualitative descriptions, it does not provide the most prominent medical terms, nor enable us to detect **distributions** and **trends** of topics in the field. 
 
 ## A Solution
 [Topic Modeling](https://en.wikipedia.org/wiki/Topic_model) is an [unsupervised machine learning](https://en.wikipedia.org/wiki/Unsupervised_learning) algorithm that extracts topics from a set of documents. The specific topic modeling algorithm I applied was [Latent Dirichlet Allocation](https://en.wikipedia.org/wiki/Latent_Dirichlet_allocation) (LDA), which looks for words that frequently appear together. I coupled it with [Term Frequency-Inverse Document Frequency](https://en.wikipedia.org/wiki/Tf%E2%80%93idf) (TFIDF), which prioritizes rare words over common words.
@@ -145,7 +145,7 @@ This could be difficult to read in first glance. I looked up a few key terms in 
     </tr>
   </tbody>
 </table>
-
+<br/>
 Interestingly, a common theme among the terms and articles seems to be **emerging resistance** to chemotherapy drugs. Chemotherapy resistance is implicated in terms such as [autophagy](http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0006251), [BCRP expression](https://www.nature.com/articles/1206938), and combination chemotherapy. 
 
 A similar problem is occurring with [antibiotic resistance](https://www.cdc.gov/drugresistance/index.html). In fact, combination chemotherapy was [inspired](https://en.wikipedia.org/wiki/History_of_cancer_chemotherapy#Combination_chemotherapy) by the success of antibiotics in the mid 1900s, which had used a combination approach to overcome drug resistance and treat tuberculosis. 
@@ -175,6 +175,6 @@ The purpose of this project was to develop a method for **quickly understanding 
 Based on the results from topic modeling, the landscape of breast cancer research can be characterized by the following traits:
 1. **More than 90%** of papers discuss conventional treatment methods, namely chemotherapy and hormonal therapy. 
 2. **Triple Negative Breast Cancer** is an issue that grew more prominent the last 20 years.
-3. Many prominent medical terms are implicated with **chemotherapy resistance**. This suggests that this problem - the inefficacy of chemotherapy due to drug resistance -- is a major concern for many researchers. 
+3. Many prominent medical terms are implicated with **chemotherapy resistance**. This problem - the inefficacy of chemotherapy due to drug resistance -- could be a major concern for many researchers. 
 
 It should be noted that this method simply looked for occurrences of words. Thus this method would not only be inadequate in answering most questions in the field, but is also flawed in its ability to generate topics. One major factor is the quality and amount of prior preprocessing. I found that the removal of additional biomedical terms from the data skewed the results significantly.
