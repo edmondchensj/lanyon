@@ -1,7 +1,7 @@
 ---
 layout: post
 title: What are trends in breast cancer research over the past 20 years?
-published: false
+published: true
 ---
 
 ## Summary
@@ -9,15 +9,16 @@ published: false
 * I started with the question: "How can I quickly and comprehensively understand the landscape of cancer research?"
 * Chemotherapy is most overwhelmingly mentioned in breast cancer research. 
 * A topic on the rise is Triple Negative Breast Cancer (TNBC). 
+* A common theme seems to be emerging resistances against chemotherapy drugs. 
 <p/>
 <br/>
 
 ## Introduction
 Breast cancer is one of the major causes of death in the world. Because there are hundreds of thousands of research papers in the field, it is not easy to understand the state of research by looking through papers manually. 
 
-[Topic Modeling](https://en.wikipedia.org/wiki/Topic_model) is an [unsupervised machine learning](https://en.wikipedia.org/wiki/Unsupervised_learning) algorithm that extracts topics from a set of documents. The specific topic modeling algorithm I applied was [Latent Dirichlet Allocation](https://en.wikipedia.org/wiki/Latent_Dirichlet_allocation) (LDA), which looks for words that frequently appear together. 
+[Topic Modeling](https://en.wikipedia.org/wiki/Topic_model) is an [unsupervised machine learning](https://en.wikipedia.org/wiki/Unsupervised_learning) algorithm that extracts topics from a set of documents. The specific topic modeling algorithm I applied was [Latent Dirichlet Allocation](https://en.wikipedia.org/wiki/Latent_Dirichlet_allocation) (LDA), which looks for words that frequently appear together. I coupled it with [Term Frequency-Inverse Document Frequency](https://en.wikipedia.org/wiki/Tf%E2%80%93idf) (TFIDF), which prioritizes rare words over common words.
 
-While [cancer.gov](https://www.cancer.gov/research/areas) provides a broad overview of cancer research areas, topic modeling allows us to detect proportionalities and trends, as well as specific medical terms used in the field. 
+While [cancer.gov](https://www.cancer.gov/research/areas) provides a broad overview of cancer research areas, topic modeling allows us to detect distributions and trends, as well as specific medical terms used in the field. 
 
 ## Data
 Using the [Biopython API](https://biopython.org/DIST/docs/api/Bio.Entrez-module.html). I retrieved 12,951 review paper abstracts published between 1997 to 2017 from the [PubMed database](https://www.ncbi.nlm.nih.gov/pubmed). I narrowed down papers using the following search criteria:
@@ -26,20 +27,21 @@ Using the [Biopython API](https://biopython.org/DIST/docs/api/Bio.Entrez-module.
 * of type: [Review](https://en.wikipedia.org/wiki/Review_article)
 * contains an abstract
 
-Reviews are secondary sources that summarize the "current state of understanding" in a field. Because they are typically more qualitative than primary research, I expected that they could provide good, if not better results. I further reduced the amount of text that I had to process by using abstracts. 
+Reviews are secondary sources that summarize the "current state of understanding" in a field. I further reduced the amount of text that I had to process by using abstracts. 
 
 ## Method
-The entire process involved the following steps. The code can be found in my github [repository](https://github.com/edmondchensj/cancer-research). 
+The entire process involved the following steps. The code can be found in this github [repository](#). 
 1. Data Retrieval
 
 2. Preprocessing
-    * I applied Natural Language Processing (NLP) to prepare the data. On top of the standard NLP procedures, I removed additional [stop words](https://en.wikipedia.org/wiki/Stop_words) that are specific to the biomedical field. Examples include "breast", "research", "female", "treatment" and "receptor". 
-    * These words describe broad categories and are not specific enough to be helpful. Choosing the stop words took about 10 manual iterations. 
+    * I applied Natural Language Processing (NLP) to preprocess the data. 
+    * On top of the standard NLP procedures, I removed additional [stop words](https://en.wikipedia.org/wiki/Stop_words) that are specific to the biomedical field. Examples include "breast", "female", "treatment" and "receptor". 
+    * Often, these words describe broad categories and are not specific enough to be helpful. Choosing stop words took about 10 manual iterations. 
     * The total number of additional stop words was 148. 
 
 
 3. Topic Modeling
-    * I ran an LDA model with Term Frequency-Inverse Document Frequency (TFIDF), using the open source library [*Gensim*](https://radimrehurek.com/gensim/index.html). 
+    * I ran an LDA model with TFIDF, using the open source library [*Gensim*](https://radimrehurek.com/gensim/index.html). 
 
 4. Postprocessing and Visualization
     * Visualizations were made using [*matplotlib*](https://matplotlib.org).
@@ -47,31 +49,102 @@ The entire process involved the following steps. The code can be found in my git
 
 ## Results
 ### I. Determining number of topics
-The first step was determining the number of topics. Because LDA requires pre-determining the number of topics, I ran LDA for 5 trials, over a span of 30 numbers of topics, and measured the coherence score. 
+The first step was determining the number of topics. Because LDA requires pre-determining the number of topics, I ran LDA for 5 trials, over a span of 30 numbers of topics, and measured the *coherence score*. 
 ![coherence-graph](/assets/images/breast_cancer/coherence_graph.png)
-The results shows an "elbow" at 11. This number of topics would likely give us best result while being most concise. 
+The results shows an ["elbow"](https://en.wikipedia.org/wiki/Elbow_method_(clustering)) at 11, after which the rate of improvement reduces significantly. This number of topics would likely give us best result while being most concise. 
 
 <br/>
 ### II. So, what are topics?
 After deciding on the number of topics, I visualized the topics in a grid of wordclouds below. The wordclouds show the top 20 words for that topic, sized by its importance. 
 ![wordcloud](/assets/images/breast_cancer/wordcloud_grid.png){: .img-container}
 
-This could be difficult to read in first glance. I looked up the key terms in each topic for better explanations. It seems that these topics **often have subtopics** within themselves. 
+This could be difficult to read in first glance. I looked up a few key terms in each topic and posted links to some articles I found. 
 
-... insert table
+<table>
+  <thead>
+    <tr>
+      <th>Topic</th>
+      <th>Keywords</th>
+      <th>Likely to be about ...</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>metastasis, vaccines, microenvironment</td>
+      <td><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5645504/">Immunotherapy</a> for treating metastatic breast cancer</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>vitamin, diet, alcohol</td>
+      <td>Macro- and micronutrients such as <a href="https://jamanetwork.com/journals/jama/article-abstract/187252">dietary intake</a> and <a href="https://academic.oup.com/ajcn/article/85/6/1586/4633053">Vitamin D</a></td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>cscs, taxane, bone metastasis</td>
+      <td>Breast cancer stem cells (CSCs) and <a href="https://www.nejm.org/doi/full/10.1056/nejmoa064320">chemotherapeutic agents</a> for metastatic cancer</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>cox, autophagy, mutation, mmp</td>
+      <td>Enzyme <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2361146/">cyco-oxgenase (COX)</a>, <a href="http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0006251">autophagy</a> linked to chemotherapy resistance, <a href="https://bmccancer.biomedcentral.com/articles/10.1186/1471-2407-9-188">matrix metalloproteinases (MMPs)</a></td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>sentinel node, axillary dissection, brain metastasis</td>
+      <td>Breast cancer <a href="https://www.cancer.gov/about-cancer/diagnosis-staging/staging/sentinel-node-biopsy-fact-sheet">frequently spreads</a> to axillary lymph nodes.</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>tnbc, thyroid, labc, nac</td>
+      <td><a href="https://www.jci.org/articles/view/45014?elq=2f1e11aad7e740cf9a3d8bfd51c3b4f4">Triple Negative Breast Cancer</a> (TNBC). Link between <a href="https://breast-cancer-research.biomedcentral.com/articles/10.1186/bcr609">thyroid diseases and breast cancer</a>. Locally advanced breast cancer (LABC). NAC likely refers to neoadjuvant chemotherapy, but could also refer to nipple-areola complex.</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>bcrp, biologic therapies</td>
+      <td><a href="https://www.nature.com/articles/1206938">Breast cancer resistance protein</a> (BCRP).</td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td>man, population, BRCA, ixabepilone</td>
+      <td><a href="https://www.sciencedirect.com/science/article/pii/S0140673606682263">Male breast cancers</a>, BRCA gene mutation, <a href="https://www.cancer.gov/about-cancer/treatment/drugs/ixabepilone">Ixabepilone</a> (chemotherapy for advanced breast cancer)</td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td>obesity, lymphedema, yoga</td>
+      <td>Physical activities: <a href="http://cancerres.aacrjournals.org/content/67/6/2391.short">obesity</a>, <a href="https://www.nejm.org/doi/full/10.1056/nejmoa0810118">weight lifting and lymphedema</a></td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td>mirna, zoledronic acid</td>
+      <td>MicroRNA <a href="http://cancerres.aacrjournals.org/content/65/16/7065.short">gene expression</a>, zoledronic acid treats <a href="https://en.wikipedia.org/wiki/Zoledronic_acid">bone-related symptoms</a> of cancer</td>
+    </tr>
+    <tr>
+      <td>11</td>
+      <td>chemotherapy, combination, tamoxifen</td>
+      <td>Conventional treatment such as chemotherapy and hormonal therapy (Tamoxifen). Chemotherapy regimens often use multiple drugs in <a href="https://en.wikipedia.org/wiki/History_of_cancer_chemotherapy#Combination_chemotherapy">combination</a>.</td>
+    </tr>
+  </tbody>
+</table>
 
 <br/>
 ### III. Which is most prevalent? 
 ![Topic-Mentions](/assets/images/breast_cancer/topic_mention.png){: .img-container}
-Mainstream treatment methods, such as **chemotherapy** are mentioned far more frequently than any other topic. Also in this category are hormonal therapy drugs such as **aromatase-inhibitors** and **Tamoxifen**. In chemotherapy, a [**combination**](https://www.ncbi.nlm.nih.gov/books/NBK13955/) approach is common. These treatment methods are often tested [with one another](https://www.ncbi.nlm.nih.gov/pubmed/15894097). One metric often used is the **recurrence** of cancer. 
+Topic 11 is mentioned far more frequently than any other topic. This topic is characterized by conventional treatment methods, namely **chemotherapy** ("agent", "combination") and **hormonal therapy** ("Tamoxifen", "aromatase-inhibitors"). 
 
-The next most frequent topics were **metastasis** and **vaccines**.  
+The next most frequent topic is Topic 1, characterized by **metastasis** and **immunotherapy**.
 
 <br/>
 ### IV. What is the trend? 
 ![Topic-Trend](/assets/images/breast_cancer/topic_trend_rel.png){: .img-container}
-It seems that "TNBC" or **Triple Negative Breast Cancer** is a topic that is being increasingly mentioned. Other trending topics include **metastasis**. 
+Topic 6, characterized by **Triple Negative Breast Cancer (TNBC)**, had the most growth from 1997 to 2017, at +48%. The first mention of TNBC is said to be [October 2005](https://www.nejm.org/doi/full/10.1056/nejmra1001389). TNBC is clinically important because patients with TNBC do not express the gene for three key [hormonal receptors](https://en.wikipedia.org/wiki/Triple-negative_breast_cancer), making them [difficult to treat](https://www.sciencedirect.com/science/article/pii/S1470204507700748).
+
+Topic 2, characterized by **nutrition**, had the most negative growth, at -48%. 
 
 <br/>
 ## Conclusion
-The main subject of chemotherapy is mentioned far more frequently than any other topics. We can observe that in the field of chemotherapy, they often apply **combinations** of agents 
+Conventional treatment methods i.e. chemotherapy and hormonal therapy are mentioned far more frequently than any other topics. Triple Negative Breast Cancer is a topic that has emerged in the last two decades. 
+
+Interestingly, a common theme among the terms and articles seems to be **emerging resistance** to chemotherapy drugs. Chemotherapy resistance is implicated in terms such as [autophagy](http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0006251), [BCRP expression](https://www.nature.com/articles/1206938), and combination chemotherapy. A similar problem is occurring with [antibiotic resistance](https://www.cdc.gov/drugresistance/index.html). Combination chemotherapy was in fact [inspired](https://en.wikipedia.org/wiki/History_of_cancer_chemotherapy#Combination_chemotherapy) by the success of antibiotics in the mid 1900s, which had used a combination approach to overcome drug resistance and treat tuberculosis. 
+
+It should be noted that there would be many other topics ***not*** covered in this topic model. Results would vary significantly based on papers selected, quality of preprocessing, and modeling algorithms. 
