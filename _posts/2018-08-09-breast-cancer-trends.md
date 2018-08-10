@@ -148,6 +148,10 @@ This could be difficult to read in first glance. I looked up a few key terms in 
   </tbody>
 </table>
 
+Interestingly, a common theme among the terms and articles seems to be **emerging resistance** to chemotherapy drugs. Chemotherapy resistance is implicated in terms such as [autophagy](http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0006251), [BCRP expression](https://www.nature.com/articles/1206938), and combination chemotherapy. 
+
+A similar problem is occurring with [antibiotic resistance](https://www.cdc.gov/drugresistance/index.html). In fact, combination chemotherapy was [inspired](https://en.wikipedia.org/wiki/History_of_cancer_chemotherapy#Combination_chemotherapy) by the success of antibiotics in the mid 1900s, which had used a combination approach to overcome drug resistance and treat tuberculosis. 
+
 <br/>
 ### III. Which is most prevalent? 
 ![Topic-Mentions](/assets/images/breast_cancer/topic_mention.png){: .img-container}
@@ -162,16 +166,15 @@ Topic 6, characterized by **Triple Negative Breast Cancer (TNBC)**, had the most
 
 Topic 2, characterized by **nutrition**, had the most negative growth, at -48%. 
 
+This graph also lets us see that Topic 11 is discussed in more than 90% of breast cancer review papers. 
+
 <br/>
 ## Conclusion
-The purpose of this project was to develop a method for quickly understanding the diversity and landscape of breast cancer research. This was due to the "cold-start" problem: people without prior knowledge of the field or other subfields do not know which medical terms to begin researching. 
+The purpose of this project was to develop a method for **quickly understanding the landscape of breast cancer research**. This was due to the "cold-start" problem: people without prior knowledge of the field or other subfields do not know which medical terms to begin researching. 
 
-I was new to the field of cancer research, and topic modeling provided a comprehensive set of medical terms and enabled me to observe the distribution and trends among possible subfields. 
-
-In breast cancer research, I found that conventional treatment methods i.e. chemotherapy and hormonal therapy are mentioned far more frequently than any other topics. Triple Negative Breast Cancer is a topic that has emerged in the last two decades. 
-
-Interestingly, a common theme among the terms and articles seems to be **emerging resistance** to chemotherapy drugs. Chemotherapy resistance is implicated in terms such as [autophagy](http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0006251), [BCRP expression](https://www.nature.com/articles/1206938), and combination chemotherapy. 
-
-A similar problem is occurring with [antibiotic resistance](https://www.cdc.gov/drugresistance/index.html). In fact, combination chemotherapy was [inspired](https://en.wikipedia.org/wiki/History_of_cancer_chemotherapy#Combination_chemotherapy) by the success of antibiotics in the mid 1900s, which had used a combination approach to overcome drug resistance and treat tuberculosis. 
+Based on the results from topic modeling, the landscape of breast cancer research can be characterized by the following traits:
+1. **More than 90%** of papers discuss conventional treatment methods, namely chemotherapy and hormonal therapy. 
+2. **Triple Negative Breast Cancer** is an issue that grew more prominent the last 20 years.
+3. Many prominent medical terms are implicated with **chemotherapy resistance**. This suggests that this problem - the inefficacy of chemotherapy due to drug resistance -- may be a major concern for many researchers. 
 
 It should be noted that this method simply looked for occurrences of words. Thus this method would not only be inadequate in answering most questions in the field, but is also flawed in its ability to generate topics. One major factor is the quality and amount of prior preprocessing. I found that the removal of additional biomedical terms from the data skewed the results significantly.
