@@ -48,7 +48,7 @@ Using the [Biopython API](https://biopython.org/DIST/docs/api/Bio.Entrez-module.
 * of type: [Review](https://en.wikipedia.org/wiki/Review_article)
 * contains an abstract
 
-Reviews are secondary sources that summarize the "current state of understanding" in a field. I further reduced the amount of text that I had to process by using abstracts. 
+Reviews are secondary sources that summarize the "current state of understanding" in a field and thus present a concise but comprehensive source of data. I further reduced the amount of text that I had to process by using abstracts. 
 
 ## Method
 The entire process involved the following steps. 
