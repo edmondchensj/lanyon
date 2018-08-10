@@ -163,6 +163,8 @@ Topic 2, characterized by **nutrition**, had the most negative growth, at -48%.
 ## Conclusion
 The purpose of this project was to develop a method for quickly understanding the diversity and landscape of breast cancer research. This was due to the "cold-start" problem: people without prior knowledge of the field or other subfields do not know which medical terms to begin researching. 
 
+Topic Modeling provides a comprehensive set of medical terms, and allows us to observe distributions and trends among the subfields. 
+
 In breast cancer research, I found that conventional treatment methods i.e. chemotherapy and hormonal therapy are mentioned far more frequently than any other topics. Triple Negative Breast Cancer is a topic that has emerged in the last two decades. 
 
 Interestingly, a common theme among the terms and articles seems to be **emerging resistance** to chemotherapy drugs. Chemotherapy resistance is implicated in terms such as [autophagy](http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0006251), [BCRP expression](https://www.nature.com/articles/1206938), and combination chemotherapy. A similar problem is occurring with [antibiotic resistance](https://www.cdc.gov/drugresistance/index.html). In fact, combination chemotherapy was [inspired](https://en.wikipedia.org/wiki/History_of_cancer_chemotherapy#Combination_chemotherapy) by the success of antibiotics in the mid 1900s, which had used a combination approach to overcome drug resistance and treat tuberculosis. 
