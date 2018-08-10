@@ -8,7 +8,7 @@ permalink:
 ## Summary
 * I applied unsupervised machine learning to examine 12,951 review paper abstracts in breast cancer research.
 * I wanted to address the question: "How can I quickly and comprehensively understand the landscape of cancer research?"
-* While online databases such as PubMed provide access to research papers, it could be challenging to understand what major frontiers are. 
+* While online databases such as PubMed provide access to research papers, it could be challenging to understand what the major frontiers are. 
 * Results from unsupervised learning show that chemotherapy is most overwhelmingly discussed, and an emerging topic is Triple Negative Breast Cancer (TNBC). 
 
 <p/>
