@@ -70,7 +70,7 @@ The entire process involved the following steps.
 
 ## Results
 ### I. Determining number of topics
-The first step was determining the number of topics. Because LDA requires pre-determining the number of topics, I ran LDA for 5 trials, over a span of 30 numbers of topics, and measured the *coherence score*. 
+Once I was satisfied with data preprocessing, the first step was to determine the number of topics. Because LDA requires pre-determining the number of topics, I ran LDA for 5 trials, over a span of 30 numbers of topics, and measured the *coherence score*. 
 ![coherence-graph](/assets/images/breast_cancer/coherence_graph.png)
 The results shows an ["elbow"](https://en.wikipedia.org/wiki/Elbow_method_(clustering)) at 11, after which the rate of improvement reduces significantly. This number of topics would likely give us best result while being most concise. 
 
