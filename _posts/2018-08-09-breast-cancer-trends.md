@@ -8,9 +8,9 @@ permalink:
 ## Summary
 * I applied unsupervised machine learning to examine 12,951 review paper abstracts in breast cancer research.
 * I wanted to address the question: "How can I quickly and comprehensively understand the landscape of cancer research?"
-* Chemotherapy is most overwhelmingly mentioned in breast cancer research. 
-* An emerging topic is Triple Negative Breast Cancer (TNBC). 
-* A common theme seems to be chemotherapy resistance. 
+* While online databases such as PubMed provide access to research papers, it could be challenging to understand the major frontiers in the field of research. 
+* Results from unsupervised learning show that chemotherapy is most overwhelmingly discussed, and an emerging topic is Triple Negative Breast Cancer (TNBC). 
+
 <p/>
 <br/>
 
@@ -168,9 +168,11 @@ Topic 2, characterized by **nutrition**, had the most negative growth, at -48%.
 
 This graph also lets us see that Topic 11 is discussed in more than 90% of breast cancer review papers. 
 
+These results were based on a minimum topic contribution of 10%. In the LDA model, every paper is characterized by a mixture of several topics adding up to 100%. 
+
 <br/>
 ## Conclusion
-The purpose of this project was to develop a method for **quickly understanding the landscape of breast cancer research**. This was due to the "cold-start" problem: people without prior knowledge of the field or other subfields do not know which medical terms to begin researching. 
+The purpose of this project was to develop a method for **quickly understanding the landscape of breast cancer research**. This was due to the "cold-start" problem: people without prior knowledge of the field or other subfields do not know which medical terms they could use to begin researching. 
 
 Based on the results from topic modeling, the landscape of breast cancer research can be characterized by the following traits:
 1. **More than 90%** of papers discuss conventional treatment methods, namely chemotherapy and hormonal therapy. 
