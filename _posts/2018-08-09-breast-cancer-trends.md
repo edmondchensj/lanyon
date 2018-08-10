@@ -161,9 +161,7 @@ Topic 2, characterized by **nutrition**, had the most negative growth, at -48%.
 
 <br/>
 ## Conclusion
-The purpose of this project was to develop a quick and comprehensive method for understanding the diversity and landscape of breast cancer research. This was due to the "cold-start" problem for people without prior knowledge of the field or of other subfields. 
-
-On top of generating a comprehensive set of key medical terms, this method also enables us to observe distributions and trends in a research field. 
+The purpose of this project was to develop a method for quickly understanding the diversity and landscape of breast cancer research. This was due to the "cold-start" problem: people without prior knowledge of the field do not know the medical terms to begin researching more deeply. 
 
 In breast cancer research, I found that conventional treatment methods i.e. chemotherapy and hormonal therapy are mentioned far more frequently than any other topics. Triple Negative Breast Cancer is a topic that has emerged in the last two decades. 
 
