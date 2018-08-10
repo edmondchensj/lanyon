@@ -8,8 +8,8 @@ published: true
 * I applied unsupervised machine learning to examine 12,951 review paper abstracts in breast cancer research. 
 * I started with the question: "How can I quickly and comprehensively understand the landscape of cancer research?"
 * Chemotherapy is most overwhelmingly mentioned in breast cancer research. 
-* A topic on the rise is Triple Negative Breast Cancer (TNBC). 
-* A common theme seems to be emerging resistances against chemotherapy drugs. 
+* An emerging topic is Triple Negative Breast Cancer (TNBC). 
+* A common theme seems to be chemotherapy resistance. 
 <p/>
 <br/>
 
