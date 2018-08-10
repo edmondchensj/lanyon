@@ -56,7 +56,7 @@ The results shows an ["elbow"](https://en.wikipedia.org/wiki/Elbow_method_(clust
 <br/>
 ### II. So, what are topics?
 After deciding on the number of topics, I visualized the topics in a grid of wordclouds below. The wordclouds show the top 20 words for that topic, sized by its importance. 
-![wordcloud](/assets/images/breast_cancer/wordcloud_grid.png){: .img-container}
+![wordcloud](/assets/images/breast_cancer/wordcloud_grid.png)
 
 This could be difficult to read in first glance. I looked up a few key terms in each topic and posted links to some articles I found. 
 

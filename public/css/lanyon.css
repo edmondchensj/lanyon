@@ -379,6 +379,7 @@ a.sidebar-nav-item:focus {
 }
 @media (min-width: 56em) {
   .img-container {
+    margin-left:-5rem;
     max-width: 53rem;
   }
 }
