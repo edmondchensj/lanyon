@@ -2,12 +2,11 @@
 layout: post
 title: What are trends in breast cancer research over the past 20 years?
 published: true
-permalink: 
 ---
 
 ## Summary
 * I applied unsupervised machine learning to examine 12,951 review paper abstracts in breast cancer research.
-* I wanted to address the question: "How can I quickly and comprehensively understand the landscape of cancer research?"
+* I wanted to address the question: "How can I quickly understand the landscape of cancer research?"
 * While online databases such as PubMed provide access to research papers, it could be challenging to understand what the major frontiers are. 
 * Results from unsupervised learning show that chemotherapy is most overwhelmingly discussed, and an emerging topic is Triple Negative Breast Cancer (TNBC). 
 
@@ -16,7 +15,7 @@ permalink:
 
 ## Motivation
 I started this project with the question: 
-<div class="message">"How can I quickly and comprehensively understand the landscape of cancer research?"
+<div class="message">"How can I quickly understand the landscape of cancer research?"
 </div>
 
 Online databases such as PubMed and Google Scholar now provide us with unprecedented access to millions of research papers, if not in full, then at least their abstracts. 
@@ -178,3 +177,5 @@ Based on the results from topic modeling, the landscape of breast cancer researc
 3. Many prominent medical terms are implicated with **chemotherapy resistance**. This problem - the inefficacy of chemotherapy due to drug resistance -- could be a major concern for many researchers. 
 
 It should be noted that this method simply looked for occurrences of words. Thus this method would not only be inadequate in answering most questions in the field, but is also flawed in its ability to generate topics. One major factor is the quality and amount of prior preprocessing. I found that the removal of additional biomedical terms from the data skewed the results significantly.
+
+The code for this project is posted [here](https://github.com/edmondchensj/cancer-research).
