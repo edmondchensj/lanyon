@@ -125,7 +125,7 @@ This could be difficult to read in first glance. I looked up a few key terms in 
     <tr>
       <td>8</td>
       <td>man, population, BRCA, ixabepilone</td>
-      <td><a href="https://www.sciencedirect.com/science/article/pii/S0140673606682263">Male breast cancers</a>, BRCA gene mutation, <a href="https://www.cancer.gov/about-cancer/treatment/drugs/ixabepilone">Ixabepilone</a> (chemotherapy for advanced breast cancer)</td>
+      <td><a href="https://www.sciencedirect.com/science/article/pii/S0140673606682263">Male breast cancers</a>, <a href="https://www.cancer.gov/about-cancer/causes-prevention/genetics/brca-fact-sheet">BRCA</a> gene mutation, <a href="https://www.cancer.gov/about-cancer/treatment/drugs/ixabepilone">Ixabepilone</a> (chemotherapy for advanced breast cancer)</td>
     </tr>
     <tr>
       <td>9</td>
@@ -176,6 +176,10 @@ Based on the results from topic modeling, the landscape of breast cancer researc
 2. **Triple Negative Breast Cancer** is an issue that grew more prominent the last 20 years.
 3. Many prominent medical terms are implicated with **chemotherapy resistance**. This problem - the inefficacy of chemotherapy due to drug resistance -- could be a major concern for many researchers. 
 
-It should be noted that this method simply looked for occurrences of words. Thus this method would not only be inadequate in answering most questions in the field, but is also flawed in its ability to generate topics. One major factor is the quality and amount of prior preprocessing. I found that the removal of additional biomedical terms from the data skewed the results significantly.
+It should be noted that this method simply looked for occurrences of words. Thus this method would not only be inadequate in answering most questions in the field, but is also flawed in its ability to generate topics. 
 
-The code for this project is posted [here](https://github.com/edmondchensj/cancer-research).
+One major factor is the quality and amount of prior preprocessing. I found that the removal of additional biomedical terms from the data skewed the results significantly. 
+
+## Additional Links
+* The code for this project is posted [here](https://github.com/edmondchensj/cancer-research).
+* A more detailed, interative visualization of the topic model can be found [here](/assets/images/breast_cancer/topic_model.html). This was made using the Python library [pyLDAvis](https://github.com/bmabey/pyLDAvis). 
