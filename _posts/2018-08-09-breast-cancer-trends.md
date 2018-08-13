@@ -7,7 +7,7 @@ published: true
 ## Summary
 * I applied unsupervised machine learning to examine 12,951 review paper abstracts in breast cancer research.
 * I wanted to address the question: "How can I quickly understand the landscape of cancer research?"
-* While online databases such as PubMed provide access to research papers, it could be challenging to understand what the major frontiers are. 
+* While online databases such as PubMed provide access to research papers, it can be challenging to understand what the major frontiers are. 
 * Results from unsupervised learning show that chemotherapy is most overwhelmingly discussed, and an emerging topic is Triple Negative Breast Cancer (TNBC). 
 
 <p/>
@@ -182,4 +182,4 @@ One major factor is the quality and amount of prior preprocessing. I found that 
 
 ## Additional Links
 * The code for this project is posted [here](https://github.com/edmondchensj/cancer-research).
-* A more detailed, interative visualization of the topic model can be found [here](/assets/images/breast_cancer/topic_model.html). This was made using the Python library [pyLDAvis](https://github.com/bmabey/pyLDAvis). 
+* A more detailed, interative visualization of the topic model can be found [here](/assets/images/breast_cancer/topic_model.html). This was made using [pyLDAvis](https://github.com/bmabey/pyLDAvis). 
