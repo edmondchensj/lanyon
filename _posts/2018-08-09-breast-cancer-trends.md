@@ -174,7 +174,7 @@ The purpose of this project was to develop a method for **quickly understanding 
 Based on the results from topic modeling, the landscape of breast cancer research can be characterized by the following traits:
 1. **More than 90%** of papers discuss conventional treatment methods, namely chemotherapy and hormonal therapy. 
 2. **Triple Negative Breast Cancer** is an issue that grew more prominent the last 20 years.
-3. Many prominent medical terms are implicated with **chemotherapy resistance**. This problem of drug resistance in chemotherapy could be a major concern for many researchers. 
+3. Many prominent medical terms are implicated with **chemotherapy resistance**. The problem of drug resistance in chemotherapy could be a major concern for many researchers. 
 
 It should be noted that this method simply looked for occurrences of words. Thus this method would not only be inadequate in answering most questions in the field, but is also flawed in its ability to generate topics. 
 
