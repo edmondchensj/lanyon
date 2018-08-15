@@ -15,8 +15,10 @@ published: true
 
 ## Motivation
 I started this project with the question: 
-<div class="message">"How can I quickly understand the landscape of cancer research?" <br/>-- i.e. What are most researchers working on and what are the trends?
+<div class="message">"How can I quickly understand the landscape of cancer research?"
 </div>
+
+Specifically, I wanted to know what most cancer researchers are working on and what the trends are, if any. 
 
 Online databases such as PubMed and Google Scholar now provide us with unprecedented access to millions of research papers, if not in full, then at least their abstracts. 
 
