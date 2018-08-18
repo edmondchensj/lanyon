@@ -20,7 +20,7 @@ I started this project with the question:
 
 Specifically, I wanted to know what most cancer researchers are working on and what the trends are, if any. 
 
-Online databases such as PubMed and Google Scholar now provide us with unprecedented access to millions of research papers, if not in full, then at least their abstracts. 
+Online databases such as PubMed and Google Scholar now provide access to millions of research papers, if not in full, then at least their abstracts. 
 
 But to search and use these papers, one must first know relevant keywords to search for. This presents a **"cold-start" problem** for 
 (a) people who do not have significant prior knowledge in the field and
@@ -62,7 +62,7 @@ The entire process involved the following steps.
     * The total number of additional stop words was 148. 
 
 3. Topic Modeling
-    * I ran an LDA model with TFIDF, using the open source library [*Gensim*](https://radimrehurek.com/gensim/index.html). 
+    * I ran an LDA model with TFIDF, using [*Gensim*](https://radimrehurek.com/gensim/index.html). 
 
 4. Postprocessing and Visualization
     * Visualizations were made using [*matplotlib*](https://matplotlib.org).
@@ -180,7 +180,7 @@ Based on the results from topic modeling, the landscape of breast cancer researc
 
 It should be noted that this method simply looked for occurrences of words. Thus this method would not only be inadequate in answering most questions in the field, but is also flawed in its ability to generate topics. 
 
-One major factor is the quality and amount of prior preprocessing. I found that the removal of additional biomedical terms from the data skewed the results significantly. 
+One major factor is the quality and amount of text preprocessing. I found that the removal of additional biomedical terms from the data skewed the results significantly. 
 
 ## Additional Links
 * The code for this project is posted [here](https://github.com/edmondchensj/cancer-research).
