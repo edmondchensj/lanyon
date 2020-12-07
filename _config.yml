@@ -7,7 +7,7 @@ permalink:           pretty
 
 # Setup
 title:               Edmond Chen
-#tagline:             Student
+#tagline:             
 #description:         'Starting a blog for occasional projects.'
 url:                 'https://edmondchensj.github.io/'
 baseurl:             ''
@@ -22,3 +22,4 @@ author:
 
 # Custom vars
 version:             1.0.0
+theme:               minima
